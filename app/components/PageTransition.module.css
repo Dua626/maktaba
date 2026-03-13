@@ -1,0 +1,71 @@
+/* ── Progress Bar ── */
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  z-index: 9999;
+  background: linear-gradient(90deg, var(--teal-light), var(--gold), var(--teal-light));
+  background-size: 200% 100%;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(42,124,124,0.5), 0 0 20px rgba(201,168,76,0.3);
+}
+
+.progressActive {
+  width: 85%;
+  opacity: 1;
+  animation: shimmerBar 1.2s linear infinite;
+}
+
+@keyframes shimmerBar {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ── Page Transitions ── */
+.page {
+  will-change: opacity, transform;
+}
+
+.idle {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.exit {
+  animation: pageExit 0.32s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.enter {
+  animation: pageEnter 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+    filter: blur(2px);
+  }
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+}

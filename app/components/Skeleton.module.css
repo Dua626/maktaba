@@ -1,0 +1,183 @@
+/* ── Base Skeleton ── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--charcoal-3) 25%,
+    var(--charcoal-4) 50%,
+    var(--charcoal-3) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ── Text Block ── */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* ── Product Card Skeleton ── */
+.productCard {
+  background: var(--charcoal-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.productImage {
+  background: var(--charcoal-3);
+  padding: 36px 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  border-bottom: 1px solid var(--border);
+}
+
+.productBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productIncludes {
+  background: rgba(42,124,124,0.05);
+  border: 1px solid var(--border-teal);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.productFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Catalogue Page Skeleton ── */
+.cataloguePage {
+  padding-top: var(--nav-height);
+}
+
+.pageHeader {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.controls {
+  background: var(--charcoal-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.controlsRow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.controlsRow .skeleton:first-child {
+  flex: 1;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 48px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Home Page Skeleton ── */
+.homePage {}
+
+.heroSkeleton {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 60px) 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.heroRight {
+  display: flex;
+  justify-content: center;
+}
+
+.featuredSkeleton {
+  background: var(--charcoal-2);
+  border-top: 1px solid var(--border);
+  padding: 80px 24px;
+}
+
+.sectionHead {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.featuredSkeleton .grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .heroSkeleton { grid-template-columns: 1fr; }
+  .heroRight { display: none; }
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .heroBtns { flex-direction: column; }
+}
